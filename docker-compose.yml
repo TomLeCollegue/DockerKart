@@ -1,18 +1,32 @@
 version: "3.3"
 
 services:
-  postgres:
-    build:
-      context: ./postgres
-    ports:
-      - "5432:5432"
-
-
   web:
     build:
       context: ./client
     ports: 
-    - '81:80'
+      - '81:80'
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on: 
+      - mariadb
+
+  mariadb:
+    image: mariadb:latest
+    container_name: docker-mariadb
+    ports:
+      - "3306:3306"
+    environment: 
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "leaderboard"
+    volumes:
+      - maria-data:/data/db
 
 volumes:
-   db-data: {}
+  maria-data:
+    driver: local
