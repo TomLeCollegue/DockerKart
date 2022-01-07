@@ -11,6 +11,7 @@ Le but du jeu est de finir le circuit le plus rapidement possible.
 Quand on fini un tour, notre temps est envoyé sur un backend node.js qui stoque les scores dans une base MariaDb.
 
 ## Docker
+Pour tester le deploiement avec docker, il faut etre sur la branche "Docker" du projet. 
 Nous avons un _docker compose_ qui orchestre 3 containers :
  - MariaDB sur le port 3306
  - Server Node sur le port 8000
@@ -25,6 +26,7 @@ docker-compose up --build
 ```
 
 ## Kubernetes
+Pour tester le deploiement avec docker, il faut etre sur la branche "Kubernetes" du projet. 
 Nous avons trois yaml, un pour le serveur, un pour le web, un pour le mariaDB.
 
 Les images du serveur node et du client ont été push au préalable sur docker Hub.
