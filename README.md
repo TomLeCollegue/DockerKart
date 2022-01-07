@@ -1,4 +1,7 @@
-# TP Introduction devOps 
+# Karting Game
+![image](https://user-images.githubusercontent.com/58562722/148537090-d737f0d7-3e88-4fd0-9380-a6113429b1bf.png)
+
+## TP Introduction devOps
 #### `Hugo Hersemeule, Tom Kubasik`
 
 ## Explication du projet
